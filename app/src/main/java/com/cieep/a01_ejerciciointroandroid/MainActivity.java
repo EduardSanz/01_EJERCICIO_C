@@ -35,7 +35,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       
+        btnSaludar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (txtNombre.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Escribe algo bobo", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    lblSaludo.setText("Hola "+txtNombre.getText().toString() + ", Buenos días");
+                    txtNombre.getText().clear();
+                }
+            }
+        });
 
     }
 
